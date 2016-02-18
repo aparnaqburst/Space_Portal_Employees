@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<h1>Book A Meeting Room</h1>
+    <div>
+        <label for="selRoom">Meeting Room</label>
+        <select id="selRoom" class="select-section" ng-model="meetingRoom" ng-options="template.value as template.Name for template in meetingRooms">
+            <option value="">Please Select</option>
+            <!--<option ng-repeat="obj in meetingRooms" value="{{obj.Name}}" ng-selected="{{selectedRoom == obj.value}}">{{obj.Name}}</option>-->
+        </select>
+
+        <label for="selTime">Time Duration</label>
+        <select id="selTime" class="select-section" ng-model="selectedTime" ng-options="template.value as template.name for template in timeDurations">         
+            <option value="">Please Select</option>
+            <!--<option ng-repeat="obj in timeDurations" value="{{obj.name}}" ng-selected="{{selectedTime == obj.value}}">{{obj.name}}</option>-->
+        </select>
+        <!--<p>{{meetingRoom.Name}}</p>-->
+        <button ng-click="Save()">Save</button>
+</div>
+    <div style="margin: 50px 20px ">
+        <table ng-table="bookingsTable" class="table-bordered table-responsive">
+            <tr ng-repeat="booking in bookings">
+                <td data-title="'Time'" sortable="'Time'">{{booking.Time}}</td>
+                <td data-title="'Meeting Room'">{{booking.Room}}</td>
+                <td data-title="'Booked By'">{{booking.Employee}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

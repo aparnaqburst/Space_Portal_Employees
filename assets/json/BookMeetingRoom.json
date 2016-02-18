@@ -1,0 +1,22 @@
+﻿ [{
+
+    "BookingId": "1",
+
+    "Time": "11:00 – 11:30",
+
+    "Room": "Phase 3 - Main",
+
+    "Employee": "Vipin Raj"
+
+},
+{
+
+    "BookingId": "2",
+
+    "Time": "10:00 – 10:30",
+
+    "Room": "Phase 3 - Haskel",
+
+    "Employee": "Sarath Manohar"
+
+}]

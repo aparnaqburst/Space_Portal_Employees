@@ -1,0 +1,17 @@
+﻿{
+"EmployeeId":"1", 
+"IsAdmin":"False", 
+"FullName":"Vipin", 
+"Email":"vipin@qburst.com",
+"Password":"123123",
+"Designation":"Senior Engineer", 
+"Department":"Development", 
+"Stream":".Net", 
+"ExperienceInYears":"5", 
+"ExperienceInMonths":"9", 
+"Mobile":"9785446855", 
+"Residence":"0472215856", 
+"Address":"TC 123,TVM", 
+"SkypeId":"vipin_12", 
+"Skills":["C#”, "MVC”, "WCF”] 
+}
