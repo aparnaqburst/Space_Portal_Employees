@@ -3,9 +3,20 @@
 <head>
     <title></title>
 </head>
-<body>
-    skills
-    <h2>{{ test }}</h2>
-    <a href="" ng-click="editProfile()">Edit</a>
+<body>  
+    <h2>Skills</h2>
+    <div ng-hide="isEdit">
+        <span ng-repeat="skill in employeeSkills" >{{skill}}<span ng-if="!$last">,</span></span>
+        <a href="" ng-click="editProfile()" style="float:right">Edit</a>
+    </div>
+    <div ng-show="isEdit">
+        <ul class="skill-list" id="NavItem">
+            <li ng-repeat="skill in skillSet" ng-click="setValue(skill)"><p>{{skill.name}}</p></li>
+        </ul>
+        <ul class="addskill-list"> <!--"skill in employeeSkills track by $index"-->
+            <li ng-repeat="skill in employeeSkills"><p>{{skill}}</p></li>
+        </ul>
+        <button ng-click="SaveSkills()">Save</button>
+    </div>
 </body>
 </html>

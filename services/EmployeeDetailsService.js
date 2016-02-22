@@ -23,4 +23,16 @@ employeeApp.service('EmployeeDetailsService', function ($http) {
             }
         );
     }
+
+    this.getSkillset = function () {
+        return $http.get('./assets/json/Skills.json')
+        .then(
+        function (response) {
+            return response.data;
+        },
+        function (errResponse) {
+            console.error('Error fetching skills');
+        }
+        );
+    }
 });

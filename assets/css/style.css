@@ -148,5 +148,29 @@ float: left;
     display: inline-block;
     vertical-align: top;
 }
-
-
+.skill-list {
+    border: 1px solid #000;
+       list-style-type: none;
+       overflow:hidden; 
+       overflow-y:scroll;
+       width:175px;
+       height:200px;
+       float:left;
+       margin-right:150px;
+       
+}
+.addskill-list {
+    border: 1px solid #000;
+       list-style-type: none;
+       overflow:hidden; 
+       overflow-y:scroll;
+       width:175px;
+       height:200px;
+       display: inline-block;
+       
+}
+.skill-listItem {
+    border-bottom: 1px dotted grey;
+}
+#NavItem li:hover {background-color: #969CA9; cursor:pointer;}
+/*#NavItem li:active {background-color: #f00;}*/

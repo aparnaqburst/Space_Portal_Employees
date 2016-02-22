@@ -47,6 +47,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope,
     $scope.employeeList = [];
     var selectedEmployeeId = $rootScope.LoginId; //$stateParams.id; //$location.search()['id'];
 
+    $scope.employeeSkills = [];
     $scope.getEmployee = function () {
         return EmployeeDetailsService.getEmployeeList().then(
                     function (response) {
@@ -64,6 +65,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope,
                                 $scope.residence = employee.Residence;
                                 $scope.skypeId = employee.SkypeId;
                                 $scope.address = employee.Address;
+                                $scope.employeeSkills = employee.Skills;
                             }
                         });
                     },
@@ -73,6 +75,9 @@ employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope,
               )
     };
     $scope.getEmployee();
-    $state.go('Employee.EmployeeDetails.Profile');
+    if ($state.is('Admin.EmployeeDetails') || $state.is('Employee.EmployeeDetails')) {
+        $state.go('Employee.EmployeeDetails.Profile');
+    }
+   // OR
    //$state.go('.Profile');
 });

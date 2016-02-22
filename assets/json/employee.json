@@ -11,8 +11,9 @@
 "ExperienceInMonths":4, 
 "Mobile":"9785446855", 
 "Residence":"0472215856", 
-"Address":"TC 123,TVM", 
-"SkypeId":"vipin_12"
+"Address":"TC 123,TVM",
+"SkypeId": "vipin_12",
+"Skills": ["C#",".NET","MVC","WCF","ASP .NET","SQL Server"]
 },
 {
 "EmployeeId":"2", 
@@ -27,6 +28,7 @@
 "ExperienceInMonths":9, 
 "Mobile":"9785446855", 
 "Residence":"0472215856", 
-"Address":"TC 123,TVM", 
-"SkypeId":"vipin_12"
+"Address":"TC 123,TVM",
+"SkypeId": "vipin_12",
+"Skills": ["C#",".NET","JavaScript","Angular JS","JQuery"]
 }]
