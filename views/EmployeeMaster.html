@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="section-main">
+        <div class="menu-bar">
+            <ul>
+                <li><a ui-sref=".Dashboard">Dashboard </a></li>
+                <li><a ui-sref=".EmployeeDetails">My Profile</a></li>
+                <li><a ui-sref=".BookMeetingRoom">Book Meeting Room</a></li>
+                <li><a ui-sref="Login">Logout</a></li>
+                <!--<li><a href="#dashboard">Dashboard </a></li>
+                    <li><a href="#employeeList">Employee</a></li>
+                    <li><a href="#">Book Meeting Room</a></li>
+                    <li><a href="#login">Logout</a></li>-->
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>{{name}}</h2>
+            <!--<ng-view></ng-view>-->
+            <div ui-view></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

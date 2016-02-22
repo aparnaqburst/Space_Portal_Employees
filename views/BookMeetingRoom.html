@@ -7,18 +7,21 @@
 <h1>Book A Meeting Room</h1>
     <div>
         <label for="selRoom">Meeting Room</label>
-        <select id="selRoom" class="select-section" ng-model="meetingRoom" ng-options="template.value as template.Name for template in meetingRooms">
-            <option value="">Please Select</option>
+        <select id="selRoom" class="select-section" ng-model="meetingRoom" ng-options="template.Name for template in meetingRooms">
+            <option value="" selected="selected">Please Select</option>
             <!--<option ng-repeat="obj in meetingRooms" value="{{obj.Name}}" ng-selected="{{selectedRoom == obj.value}}">{{obj.Name}}</option>-->
+            <
+            /s
         </select>
 
         <label for="selTime">Time Duration</label>
-        <select id="selTime" class="select-section" ng-model="selectedTime" ng-options="template.value as template.name for template in timeDurations">         
-            <option value="">Please Select</option>
+        <select id="selTime" class="select-section" ng-model="selectedTime" ng-options="template.name for template in timeDurations" >         
+            <option value="" selected="selected">Please Select</option>
             <!--<option ng-repeat="obj in timeDurations" value="{{obj.name}}" ng-selected="{{selectedTime == obj.value}}">{{obj.name}}</option>-->
         </select>
         <!--<p>{{meetingRoom.Name}}</p>-->
-        <button ng-click="Save()">Save</button>
+        <!--<button ng-click="Save()">Save</button>-->
+        <input type="button" value="Save" ng-click="Save()" />
 </div>
     <div style="margin: 50px 20px ">
         <table ng-table="bookingsTable" class="table-bordered table-responsive">

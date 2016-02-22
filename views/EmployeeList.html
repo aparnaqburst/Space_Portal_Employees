@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>Employee List</h2>
+    <table class="table-employee">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Name</td>
+                <td>Emp. Id</td>
+                <td>Email</td>
+                <td>Skills</td>
+                <td>Designation</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tr ng-repeat="employee in employeeList">
+            <td>1</td>
+            <td>{{ employee.FullName }}
+            </td>
+            <td>{{ employee.EmployeeId }}
+            </td>
+            <td>{{ employee.Email }}
+            </td>
+            <td></td>
+            <td>{{ employee.Designation }}
+            </td>
+            <td>
+                <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>
+                <a href="" ng-click="delete(lst.eventid)">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

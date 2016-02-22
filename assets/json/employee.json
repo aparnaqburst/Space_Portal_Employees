@@ -1,17 +1,32 @@
-﻿{
+﻿[{
 "EmployeeId":"1", 
-"IsAdmin":"False", 
+"IsAdmin":"false", 
 "FullName":"Vipin", 
 "Email":"vipin@qburst.com",
-"Password":"123123",
+"Password":"vipin1",
 "Designation":"Senior Engineer", 
 "Department":"Development", 
 "Stream":".Net", 
-"ExperienceInYears":"5", 
-"ExperienceInMonths":"9", 
+"ExperienceInYears":3, 
+"ExperienceInMonths":4, 
 "Mobile":"9785446855", 
 "Residence":"0472215856", 
 "Address":"TC 123,TVM", 
-"SkypeId":"vipin_12", 
-"Skills":["C#”, "MVC”, "WCF”] 
-}
+"SkypeId":"vipin_12"
+},
+{
+"EmployeeId":"2", 
+"IsAdmin":"true", 
+"FullName":"Abin", 
+"Email":"abin@qburst.com",
+"Password":"abin1",
+"Designation":"Lead Engineer", 
+"Department":"Development", 
+"Stream":".Net", 
+"ExperienceInYears":15, 
+"ExperienceInMonths":9, 
+"Mobile":"9785446855", 
+"Residence":"0472215856", 
+"Address":"TC 123,TVM", 
+"SkypeId":"vipin_12"
+}]

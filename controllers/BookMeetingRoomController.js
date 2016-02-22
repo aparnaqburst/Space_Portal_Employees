@@ -1,10 +1,10 @@
-﻿employeeApp.controller('BookMeetingRoomController', function ($scope, EmployeeDetailsService, $http, ngTableParams) {
+﻿employeeApp.controller('BookMeetingRoomController', function ($scope, EmployeeDetailsService, $http, ngTableParams, $rootScope) {
     $scope.meetingRooms = [];
     $scope.bookings = [];
     $http.get('./assets/json/MeetingRooms.json')
     .then(function (response) {
         $scope.meetingRooms = response.data;
-        $scope.meetingRoom = $scope.meetingRooms[0]; // Doubt? Why this is required since we are already setting in HTML. Its not working otherwise
+       // $scope.meetingRoom = $scope.meetingRooms[0]; // Doubt? Why this is required since we are already setting in HTML. Its not working otherwise
     });
 
     $scope.timeDurations = [{
@@ -95,12 +95,14 @@
             name: '16:30 - 17:00'
 
         }]
-    $scope.selectedTime = $scope.timeDurations[0];
+   // $scope.selectedTime = $scope.timeDurations[0];
     $scope.Save = function () {
-
+        console.log("Time :", $scope.selectedTime);
+        console.log("Room :", $scope.meetingRoom);
+       
+        $scope.bookings.push({ Time: $scope.selectedTime.name, Room: $scope.meetingRoom.Name, Employee: $rootScope.LoginName });
     };
-    $scope.Save();
-
+   
     $scope.fetchBookings = function () {
         EmployeeDetailsService.getbookedRoomsList().then(
             function(data){

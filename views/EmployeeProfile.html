@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="emp-profile">
+        <div>
+            <a href="" ng-click="editProfile()">Edit</a>
+        </div>
+        <h4>Basic Information</h4>
+        <div class="info">
+            <div class="col-6">
+                <div class="control-group">
+                    <label>Name</label>
+                    <label ng-bind="fullName"></label>
+                </div>
+                <div class="control-group">
+                    <label>Emp. Id</label>
+                    <label ng-bind="id"></label>
+                </div>
+                <div class="control-group">
+                    <label>Designation</label>
+                    <label ng-bind="designation"></label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="control-group">
+                    <label>Department</label>
+                    <label ng-bind="department"></label>
+                </div>
+                <div class="control-group">
+                    <label>Stream</label>
+                    <label ng-bind="stream"></label>
+                </div>
+                <div class="control-group">
+                    <label>Experience</label>
+                    <label>{{ experienceInYears + ' years ' + experienceInMonths + ' months'}}</label>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <h4>Personal Information</h4>
+        <div class="info">
+            <div class="col-6">
+                <div class="control-group">
+                    <label>Mobile</label>
+                    <label ng-bind="mobile"></label>
+                </div>
+                <div class="control-group">
+                    <label>Address</label>
+                    <label ng-bind="address"></label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="control-group">
+                    <label>Residence</label>
+                    <label ng-bind="residence"></label>
+                </div>
+                <div class="control-group">
+                    <label>Skype Id</label>
+                    <label ng-bind="skypeId"></label>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>

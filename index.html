@@ -7,33 +7,46 @@
     <link href="./assets/css/ng-table.min.css" rel="stylesheet" />
     <title>::: Space portal :::</title>
 </head>
+
 <body ng-app="employeeApp">
     <div class="page">
         <div class="section-header">
             <div class="top-nav"></div>
         </div>
 
-        <div class="section-main">
-           <div class="menu-bar">
-                <ul>
-                    <li><a href="#dashboard" >Dashboard </a></li>
-                    <li><a href="#login" >Employee</a></li>
-                    <li><a href="#bookmeetingroom">Book Meeting Room</a></li>
-                </ul>
-            </div>
+        <div ui-view></div>
 
-            <div class="content">
-                <ng-view></ng-view>
-            </div>
-    	 </div>
-         <div class="section-footer">
+        <div class="section-footer">
             <div class="copy">&copy; Space portal</div>
-         </div> 
+        </div>
     </div>
+    <!--<body ng-app="employeeApp">
+        <div class="page">
+            <div class="section-header">
+                <div class="top-nav"></div>
+            </div>
 
-     <!-- Angular framework libraries -->
+            <div class="section-main">
+               <div class="menu-bar">
+                    <ul>
+                        <li><a href="#dashboard" >Dashboard </a></li>
+                        <li><a href="#login" >Employee</a></li>
+                        <li><a href="#bookmeetingroom">Book Meeting Room</a></li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <ng-view></ng-view>
+                </div>
+             </div>
+             <div class="section-footer">
+                <div class="copy">&copy; Space portal</div>
+             </div>
+        </div>-->
+    <!-- Angular framework libraries -->
     <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular/angular-route.min.js"></script>
+    <!--<script src="libs/angular/angular-route.min.js"></script>-->
+    <script src="libs/angular/angular-ui-router.min.js"></script>
     <!--<link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">-->
     <script src="libs/angular/ng-table.min.js"></script>
 
@@ -42,8 +55,15 @@
     <script src="config.js"></script>
 
     <!-- Controllers -->
-    <script src="services/EmployeeDetailsService.js"></script>
+    <script src="controllers/LoginController.js"></script>
+    <script src="controllers/EmployeeListController.js"></script>
+    <script src="controllers/EmployeeDetailsController.js"></script>
+    <script src="controllers/DashboardController.js"></script>
+    <script src="controllers/EmployeeSkillsController.js"></script>
+    <script src="controllers/EmployeeProfileController.js"></script>
+    <script src="controllers/EditEmployeeController.js"></script>
     <script src="controllers/BookMeetingRoomController.js"></script>
-   
+    <script src="services/EmployeeDetailsService.js"></script>
+
 </body>
 </html>

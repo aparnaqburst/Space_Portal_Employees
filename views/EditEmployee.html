@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="emp-profile">
+        <form name="form" ng-submit="updateProfile()" role="form">
+            <h4>Basic Information</h4>
+            <div class="info">
+                <div class="col-6">
+                    <div class="control-group">
+                        <label>Name</label>
+                        <input type="text" ng-model="fullName" />
+                    </div>
+                    <div class="control-group">
+                        <label>Emp. Id</label>
+                        <input type="text" ng-model="id" readonly />
+                    </div>
+                    <div class="control-group">
+                        <label>Designation</label>
+                        <select name="designation1" ng-model="designation">
+                            <option ng-repeat="option in designationList" value="{{option.name}}">{{option.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="control-group">
+                        <label>Department</label>
+                        <select name="department" ng-model="department">
+                            <option ng-repeat="department in departmentList" value="{{department.name}}">{{department.name}}</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Stream</label>
+                        <select name="stream" ng-model="stream">
+                            <option ng-repeat="stream in streamList" value="{{stream.name}}">{{stream.name}}</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Experience</label>
+                        <select name="years" ng-model="experienceInYears" ng-options="option for option in ExperienceYears">
+                        </select>
+                        years
+                        <select name="months" ng-model="experienceInMonths" ng-options="option for option in ExperienceMonths">
+                        </select>
+                        months
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <h4>Personal Information</h4>
+            <div class="info">
+                <div class="col-6">
+                    <div class="control-group">
+                        <label>Mobile</label>
+                        <input type="text" ng-model="mobile" />
+                    </div>
+                    <div class="control-group">
+                        <label>Address</label>
+                        <textarea rows="4" cols="25" ng-model="address">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="control-group">
+                        <label>Residence</label>
+                        <input type="text" ng-model="residence" />
+                    </div>
+                    <div class="control-group">
+                        <label>Skype Id</label>
+                        <input type="text" ng-model="skypeId" />
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="control-group">
+                <input id="save" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

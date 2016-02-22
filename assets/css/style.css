@@ -11,6 +11,7 @@ body{
     -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.17);
     box-shadow: 0 0 13px rgba(0, 0, 0, 0.17);}
 
+/* Header */
 .section-header{
 	height: 140px;
 	position: relative;}
@@ -26,6 +27,7 @@ body{
 	border-bottom: 1px solid #C3BFBF;
 	}
 
+/* Main */
 .section-main{
 	min-height: 400px;}
 
@@ -48,22 +50,103 @@ body{
 
 .section-main .content {
 	width: 940px; 
-	padding: 10px 20px;
+	padding: 10px 20px 30px 20px;
 	float: left;}
 
+.login-control {
+    width:270px;
+    padding:20px 40px;
+    background : #F4F4F4;
+    margin: 0 auto;}
+.login-control .control-group {
+    margin:6px 0;}
+.login-control .control-group label {
+    width:70px;
+    display: inline-block;
+    }
+.login-control .control-group input {
+    width: 192px;
+    }
+.login-control .control-group button {
+    float: right;
+    }
+.login-control .control-group .message {
+    text-align: center;
+    color: red;
+    }
+    .ng-submitted .ng-invalid {
+    border: 1px solid red;
+    }
+
+.table-employee {
+    border-collapse: collapse;
+    width:100%;
+}
+.table-employee td{
+    margin:0;
+    padding:0;
+    border: 0;
+    border:1px solid #C3BFBF;}
+
+
+/* Footer */
 .section-footer{
 	padding: 10px 20px;
 	background-color: #4C565D;}
-
 
 .section-footer .copy{
 	padding: 5px 0;
 	color: #fff;}
 
-.select-section{
-    margin:0px 50px auto 10px;
+.clear {
+clear: both;
+}
+
+.col-6 {
+width:50%;
+float: left;
+}
+
+/* EmployeeDetails.html */
+.emp-details ul.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.emp-details ul.tabs li {
+    float: left;
+    border: 1px solid #C3BEBE;
+    border-bottom-width: 0;
+    margin: 3px 3px 0px 3px;
+    padding: 5px 5px 0px 5px;
+    background-color: #CCC;
+    color: #696969;
+    cursor: pointer;
+}
+.emp-details ul.tabs li.active {
+    background-color: #FFF;
+    color: #000;
+}
+.emp-details .tab-content {
+    border: 1px solid #C3BEBE;
+	clear: both;
+	padding: 20px;
+    display: block;
 }
 
 
+/* EmployeeProfile.html */
+.emp-profile .info {
+    border: 1px solid #C3BFBF;
+    padding:30px;
+}
+.emp-profile .control-group {
+    padding: 5px 0;
+}
+.emp-profile .control-group label {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
 
 

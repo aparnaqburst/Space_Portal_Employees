@@ -1,1 +1,1 @@
-﻿var employeeApp = angular.module('employeeApp', ['ngRoute', 'ngTable']);
+﻿var employeeApp = angular.module('employeeApp', ['ui.router', 'ngTable']);
