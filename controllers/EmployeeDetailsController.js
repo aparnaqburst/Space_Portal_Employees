@@ -1,6 +1,6 @@
 ﻿
-employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope, $location, $http, $stateParams, $state, EmployeeDetailsService) {
-    console.log('EmployeeDetails');
+employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $stateParams, $state, EmployeeDetailsService) {
+    console.log('EmployeeDetailsController');
 
     $scope.designationList = [
     { name: 'Select', value: '' },
@@ -45,7 +45,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope,
     $scope.GetExperienceMonths();
 
     $scope.employeeList = [];
-    var selectedEmployeeId = $rootScope.LoginId; //$stateParams.id; //$location.search()['id'];
+    var selectedEmployeeId = localStorage.getItem("EmployeeId")//$rootScope.LoginId; //$stateParams.id; //$location.search()['id'];
 
     $scope.getEmployee = function () {
         return EmployeeDetailsService.getEmployeeList().then(
@@ -73,6 +73,11 @@ employeeApp.controller('EmployeeDetailsController', function ($scope,$rootScope,
               )
     };
     $scope.getEmployee();
-    $state.go('Employee.EmployeeDetails.Profile');
-   //$state.go('.Profile');
+
+    ////// Edit Profile
+    ////$scope.editProfile = function () {
+    ////    $state.go('.EditProfile');
+    ////}
+
+   $state.go('.Profile');
 });

@@ -1,8 +1,8 @@
 ﻿employeeApp.controller('EmployeeProfileController', function ($scope, $state) {
-    console.log('Profile');
+    console.log('EmployeeProfileController');
 
-    // Edit Profile
-    $scope.editProfile = function () {
-        $state.go('Admin.EmployeeDetails.EditProfile');
-    }
+    ////// Edit Profile
+    ////$scope.editProfile = function () {
+    ////    $state.go('.Skills');
+    ////}
 });

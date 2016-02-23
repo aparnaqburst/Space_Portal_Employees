@@ -1,5 +1,5 @@
 ﻿employeeApp.controller('EditEmployeeController', function ($scope, $state, $stateParams, EmployeeDetailsService) {
-    console.log('EditEmployee');
+    console.log('EditEmployeeController');
 
     // Update Profile
     $scope.updateProfile = function () {
@@ -15,6 +15,6 @@
         $scope.$parent.address = $scope.address;
 
         console.log('Profile updated');
-        $state.go('Admin.EmployeeDetails.Profile');
+        $state.go('^.Profile');
     }
 });

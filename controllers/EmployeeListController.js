@@ -1,5 +1,6 @@
 ﻿
-employeeApp.controller('EmployeeListController', function ($scope, EmployeeDetailsService) {
+employeeApp.controller('EmployeeListController', function ($scope, $state, EmployeeDetailsService) {
+    console.log('EmployeeListController');
     $scope.employeeList = [];
     $scope.getEmployees = function () {
         EmployeeDetailsService.getEmployeeList().then(
@@ -12,4 +13,9 @@ employeeApp.controller('EmployeeListController', function ($scope, EmployeeDetai
           );
     }
     $scope.getEmployees();
+
+    $scope.ViewProfile = function (employeeId) {
+        localStorage.setItem("EmployeeId", employeeId);
+        $state.go('^.EmployeeDetails');
+    };
 });

@@ -29,7 +29,8 @@
             <td>{{ employee.Designation }}
             </td>
             <td>
-                <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>
+               <!-- <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>-->
+                <a ng-click="ViewProfile(employee.EmployeeId)" href="">View</a>
                 <a href="" ng-click="delete(lst.eventid)">Delete</a>
             </td>
         </tr>
