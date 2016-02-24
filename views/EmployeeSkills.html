@@ -4,19 +4,38 @@
     <title></title>
 </head>
 <body>  
-    <h2>Skills</h2>
+    <p style="background-color:#FBFB94">Are your skills up to date? If not, update it now. Do NOT add a skill just because you've read a book or attended a class. Include a skill only if you have done a real-life project that uses the skill. </p>
     <div ng-hide="isEdit">
+        <span>Skills : </span>
         <span ng-repeat="skill in employeeSkills" >{{skill}}<span ng-if="!$last">,</span></span>
         <a href="" ng-click="editProfile()" style="float:right">Edit</a>
     </div>
-    <div ng-show="isEdit">
-        <ul class="skill-list" id="NavItem">
-            <li ng-repeat="skill in skillSet" ng-click="setValue(skill)"><p>{{skill.name}}</p></li>
-        </ul>
-        <ul class="addskill-list"> <!--"skill in employeeSkills track by $index"-->
-            <li ng-repeat="skill in employeeSkills"><p>{{skill}}</p></li>
-        </ul>
-        <button ng-click="SaveSkills()">Save</button>
+    <div ng-show="isEdit" style="width:100%;height:250px">
+        <div ng-hide="isNewskill" style="float:left;width:70%">
+            <ul class="skill-list" id="NavItem">
+                <li ng-repeat="skill in skillSet" ng-click="setValue(skill)"><p>{{skill.name}}</p></li>
+            </ul>
+            <ul class="addskill-list">
+                <!--"skill in employeeSkills track by $index"-->
+                <li ng-repeat="skill in employeeSkills"><p>{{skill}}</p></li>
+            </ul>
+            <button ng-click="SaveSkills()">Save</button>
+        </div>
+        <!--<button id="AddIcon" class="button-add"></button>-->
+        <div ng-form="validateForm" style="width:30%;float:right">
+            <button id="Add" class="button-add" ng-click="addSkill()" width="30" height="30">
+                <img src="../assets/images/Addbutton.png" width="30" height="30">
+            </button>
+            <input type="text" ng-model="newSkill" ng-show="isNewskill" ng-required="true" />
+            <br />
+            <span ng-show="isRequired" style="color:red"> *The field is required</span>
+            <br />
+            <label ng-show="!isnewskill">
+                * To add a new skill, click the (+) button. Before adding a new skill please confirm that your skill is not present in the list.
+                <br> <br>* Don't forget to save your changes.
+            </label>            
+            
+        </div>
     </div>
 </body>
 </html>

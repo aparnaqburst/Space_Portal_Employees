@@ -14,7 +14,12 @@ body{
 /* Header */
 .section-header{
 	height: 140px;
-	position: relative;}
+	position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: #A0A7AD;
+}
 
 .section-header .top-nav{
 	background: #F4F4F4;
@@ -156,7 +161,7 @@ float: left;
        width:175px;
        height:200px;
        float:left;
-       margin-right:150px;
+       margin-right:80px;
        
 }
 .addskill-list {
@@ -173,4 +178,16 @@ float: left;
     border-bottom: 1px dotted grey;
 }
 #NavItem li:hover {background-color: #969CA9; cursor:pointer;}
-/*#NavItem li:active {background-color: #f00;}*/
+.button-add {
+    /*background-image: url('/images/Addbutton.png');*/
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    /*height: 16px;
+    padding-left: 16px;*/
+    vertical-align: middle;
+    /*margin-bottom:250px;*/
+    
+}
