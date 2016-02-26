@@ -5,13 +5,13 @@
 </head>
 <body>
     <div class="emp-profile">
-        <form name="form" ng-submit="updateProfile()" role="form">
+        <form name="profileForm" ng-submit="updateProfile()" role="form" novalidate>
             <h4>Basic Information</h4>
             <div class="info">
                 <div class="col-6">
                     <div class="control-group">
                         <label>Name</label>
-                        <input type="text" ng-model="fullName" />
+                        <input type="text" ng-model="fullName" required />
                     </div>
                     <div class="control-group">
                         <label>Emp. Id</label>
@@ -19,22 +19,37 @@
                     </div>
                     <div class="control-group">
                         <label>Designation</label>
-                        <select name="designation1" ng-model="designation">
-                            <option ng-repeat="option in designationList" value="{{option.name}}">{{option.name}}</option>
+                        <!--<select id="designation1" ng-model="designation" required>
+                            <option ng-repeat="option in designationList" value="{{option.value}}">{{option.name}}</option>
+                        </select>-->
+                        <select name="designation1" ng-model="designation"
+                            ng-options="des.name as des.name for des in designationList"
+                            required>
+                            <option value="">Select</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="control-group">
                         <label>Department</label>
-                        <select name="department" ng-model="department">
+                        <!--<select name="department" ng-model="department">
                             <option ng-repeat="department in departmentList" value="{{department.name}}">{{department.name}}</option>
+                        </select>-->
+                        <select name="department" ng-model="department"
+                            ng-options="dep.name as dep.name for dep in departmentList"
+                            required>
+                            <option value="">Select</option>
                         </select>
                     </div>
                     <div class="control-group">
                         <label>Stream</label>
-                        <select name="stream" ng-model="stream">
+                        <!--<select name="stream" ng-model="stream">
                             <option ng-repeat="stream in streamList" value="{{stream.name}}">{{stream.name}}</option>
+                        </select>-->
+                        <select name="stream" ng-model="stream"
+                            ng-options="str.name as str.name for str in streamList"
+                            required>
+                            <option value="">Select</option>
                         </select>
                     </div>
                     <div class="control-group">
@@ -55,7 +70,7 @@
                 <div class="col-6">
                     <div class="control-group">
                         <label>Mobile</label>
-                        <input type="text" ng-model="mobile" />
+                        <input type="text" ng-model="mobile" required />
                     </div>
                     <div class="control-group">
                         <label>Address</label>
@@ -77,7 +92,7 @@
             </div>
             <div class="control-group">
                 <input id="cancel" type="button" value="Cancel" ui-sref="^.Profile" />
-                <input id="save" type="submit" value="Save" />
+                <input id="save" type="submit" value="Save" ng-disabled="profileForm.$invalid" />
             </div>
         </form>
     </div>

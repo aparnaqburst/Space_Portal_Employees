@@ -15,7 +15,9 @@ body{
 .section-header{
 	height: 140px;
 	position: relative;}
-
+    .section-header .logo {
+    padding:15px 30px;
+    }
 .section-header .top-nav{
 	background: #F4F4F4;
 	height: 38px;
@@ -30,7 +32,9 @@ body{
 /* Main */
 .section-main{
 	min-height: 400px;}
-
+.section-main .login {
+        padding: 0 30px;
+    }
 .section-main .menu-bar{
 	width: 220px; 
 	background-color: #F3F3F3; 
@@ -102,10 +106,57 @@ body{
 clear: both;
 }
 
+.col-1 {
+width:8.33%;
+float: left;
+}
+.col-2 {
+width:16.66%;
+float: left;
+}
+.col-4 {
+width:33.33%;
+float: left;
+}
 .col-6 {
 width:50%;
 float: left;
 }
+.ng-dirty input.ng-touched.ng-invalid, .ng-dirty select.ng-touched.ng-invalid {
+    border:1px solid red;
+}
+
+/* EmployeeList.html */
+.table-emp {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-emp thead{
+ border-bottom:2px solid #ddd;
+ border-top:2px solid #ddd;
+}
+.table-emp td{
+    border-bottom:1px solid #ddd;
+    padding: 7px 3px;
+}
+.table-emp .ng-table-sort-header {
+background:#ddd;
+}
+.ng-table-pager ul {
+list-style: none; padding:0;
+}
+.ng-table-pager ul li {
+display:inline;
+}
+    .ng-table-pager ul li a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        color: #337ab7;
+        text-decoration: none;
+        border: 1px solid #ddd;
+    }
+
 
 /* EmployeeDetails.html */
 .emp-details ul.tabs {
@@ -148,5 +199,44 @@ float: left;
     display: inline-block;
     vertical-align: top;
 }
+.skill-list {
+    border: 1px solid #000;
+       list-style-type: none;
+       overflow:hidden; 
+       overflow-y:scroll;
+       width:175px;
+       height:200px;
+       float:left;
+       margin-right:150px;
+       
+}
+.addskill-list {
+    border: 1px solid #000;
+       list-style-type: none;
+       overflow:hidden; 
+       overflow-y:scroll;
+       width:175px;
+       height:200px;
+       display: inline-block;
+       
+}
+.skill-listItem {
+    border-bottom: 1px dotted grey;
+}
+#NavItem li:hover {background-color: #969CA9; cursor:pointer;}
+/*#NavItem li:active {background-color: #f00;}*/
 
-
+/* EmployeeSkills.html */
+.emp-skills .info {
+    border: 1px solid #C3BFBF;
+    padding:30px;
+}
+.emp-skills select {
+   width:100%;
+}
+.emp-skills .move {
+   text-align:center;padding-top: 75px;
+}
+.emp-skills .sec-button {
+padding: 10px 0;
+}

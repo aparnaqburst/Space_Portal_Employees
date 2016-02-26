@@ -3,7 +3,6 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     console.log('EmployeeDetailsController');
 
     $scope.designationList = [
-    { name: 'Select', value: '' },
     { name: 'Senior Engineer', value: '1' },
     { name: 'Lead Engineer', value: '2' },
     { name: 'Associate Architect', value: '3' },
@@ -12,7 +11,6 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     // $scope.designation = $scope.designationList[0].value; // default
 
     $scope.departmentList = [
-            { name: 'Select', value: '' },
             { name: 'Production', value: '1' },
             { name: 'Development', value: '2' },
             { name: 'Accounting and Finance.', value: '3' },
@@ -21,7 +19,6 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     //$scope.department = $scope.departmentList[0].value; // default
 
     $scope.streamList = [
-            { name: 'Select', value: '' },
             { name: '.Net', value: '1' },
             { name: 'Php', value: '2' },
             { name: 'Java', value: '3' },
@@ -30,7 +27,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
 
     $scope.ExperienceYears = [];
     $scope.GetExperienceYears = function() {
-        for (var i = 1; i <= 50; i++) {
+        for (var i = 0; i <= 50; i++) {
             $scope.ExperienceYears.push(i);
         }
     }
@@ -38,7 +35,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
 
     $scope.ExperienceMonths = [];
     $scope.GetExperienceMonths = function () {
-        for (var i = 1; i <= 11; i++) {
+        for (var i = 0; i <= 11; i++) {
             $scope.ExperienceMonths.push(i);
         }
     }
@@ -47,6 +44,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     $scope.employeeList = [];
     var selectedEmployeeId = localStorage.getItem("EmployeeId")//$rootScope.LoginId; //$stateParams.id; //$location.search()['id'];
 
+    $scope.employeeSkills = [];
     $scope.getEmployee = function () {
         return EmployeeDetailsService.getEmployeeList().then(
                     function (response) {
@@ -64,6 +62,7 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
                                 $scope.residence = employee.Residence;
                                 $scope.skypeId = employee.SkypeId;
                                 $scope.address = employee.Address;
+                                $scope.employeeSkills = employee.Skills;
                             }
                         });
                     },
@@ -74,10 +73,16 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     };
     $scope.getEmployee();
 
+
     ////// Edit Profile
     ////$scope.editProfile = function () {
     ////    $state.go('.EditProfile');
     ////}
-
-   $state.go('.Profile');
+    //if ($state.is('Admin.EmployeeDetails') || $state.is('Employee.EmployeeDetails')) {
+    //    $state.go('Employee.EmployeeDetails.Profile');
+    //}
+  // $state.go('.Profile');
 });
+
+    
+

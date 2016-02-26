@@ -61,6 +61,7 @@
                 controller: 'EmployeeListController',
             })
             .state("Admin.EmployeeDetails", {
+                
                 url: '/EmployeeDetails?id',
                 templateUrl: './views/EmployeeDetails.html',
                 controller: 'EmployeeDetailsController',

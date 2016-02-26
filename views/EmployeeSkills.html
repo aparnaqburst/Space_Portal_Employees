@@ -4,8 +4,38 @@
     <title></title>
 </head>
 <body>
-    skills
-    <h2>{{ test }}</h2>
-    <a href="" ng-click="editProfile()">Edit</a>
+    <div class="emp-skills">
+        <div ng-hide="isEdit">
+            <div>
+                <a href="" ng-click="editSkill()">Edit</a>
+            </div>
+            <h4>Employee Skills</h4>
+            <span ng-repeat="skill in employeeSkills">{{skill}}<span ng-if="!$last">,</span></span>
+        </div>
+        <div ng-show="isEdit">
+            <h4>Employee Skills</h4>
+            <div class="col-4">
+                <select size="10" id="allSkills" ng-model="selectedSkill">
+                    <option ng-repeat="skill in skillSet" value="{{skill.Name}}">{{skill.Name}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-2 move">
+                <button ng-click="AddSkill()">>> </button>
+            </div>
+            <div class="col-4">
+                <select size="10" id="employeeSkills">
+                    <option ng-repeat="skill2 in employeeSkills">{{skill2}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-2"></div>
+            <div class="clear"></div>
+            <div class="sec-button">
+                <input id="cancel" type="button" value="Cancel" ng-click="editSkill()" />
+                <button ng-click="SaveSkills()">Save</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

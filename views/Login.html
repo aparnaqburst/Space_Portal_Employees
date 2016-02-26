@@ -4,27 +4,29 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <h1>Login</h1>
-        <div class="login-control">
-            <form name="loginForm" ng-submit="login()" novalidate>
-                <div class="control-group">
-                    <div class="message">{{ message}}</div>
-                </div>
-                <div class="control-group">
-                    <label for="username">Username</label>
-                    <input type="email" name="username" id="username" class="form-control" ng-model="username" required />
-                </div>
-                <div class="control-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
-                </div>
-                <div class="control-group">
-                    <button type="submit" data-ng-click="Login()">Login</button>
-                </div>
-                <div class="clear"></div>
+    <div class="section-main">
+        <div class="login">
+            <h1>Login</h1>
+            <div class="login-control">
+                <form name="loginForm" ng-submit="login()" novalidate>
+                    <div class="control-group">
+                        <div class="message">{{ message}}</div>
+                    </div>
+                    <div class="control-group">
+                        <label for="username">Username</label>
+                        <input type="email" name="username" id="username" class="form-control" ng-model="username" required />
+                    </div>
+                    <div class="control-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                    </div>
+                    <div class="control-group">
+                        <button type="submit" data-ng-click="Login()">Login</button>
+                    </div>
+                    <div class="clear"></div>
 
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>

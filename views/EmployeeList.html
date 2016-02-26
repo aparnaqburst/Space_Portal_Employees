@@ -4,33 +4,26 @@
     <title></title>
 </head>
 <body>
-    <h2>Employee List</h2>
-    <table class="table-employee">
-        <thead>
-            <tr>
-                <td>#</td>
-                <td>Name</td>
-                <td>Emp. Id</td>
-                <td>Email</td>
-                <td>Skills</td>
-                <td>Designation</td>
-                <td></td>
-            </tr>
-        </thead>
-        <tr ng-repeat="employee in employeeList">
-            <td>1</td>
-            <td>{{ employee.FullName }}
+    <h1>Employee List</h1>
+    <table ng-table="employeeParams" class="table table-emp" >
+        <tr ng-repeat="employee in data">
+            <td title="'#'">{{ $index + 1 + previousTotal }}</td>
+            <td title="'Name'" filter="{ FullName: 'text'}" sortable="'FullName'">{{ employee.FullName }}
             </td>
-            <td>{{ employee.EmployeeId }}
+            <td title="'EmployeeId'" filter="{ EmployeeId: 'number'}" sortable="'EmployeeId'">{{ employee.EmployeeId }}
             </td>
-            <td>{{ employee.Email }}
+            <td title="'Email'" filter="{ Email: 'text'}" sortable="'Email'">{{ employee.Email }}
             </td>
-            <td></td>
-            <td>{{ employee.Designation }}
+            <td title="'Skills'" filter="{ Skills: 'text'}" sortable="'Skills'">
+                <span ng-repeat="s in employee.Skills track by $index">{{s}}, </span>
+            </td>
+            <td title="'Designation'" filter="{ Designation: 'text'}" sortable="'Designation'">{{ employee.Designation }}
             </td>
             <td>
-               <!-- <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>-->
+                <!-- <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>-->
                 <a ng-click="ViewProfile(employee.EmployeeId)" href="">View</a>
+            </td>
+            <td>
                 <a href="" ng-click="delete(lst.eventid)">Delete</a>
             </td>
         </tr>
