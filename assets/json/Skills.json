@@ -1,49 +1,103 @@
-﻿[{
-"Id":"1", 
-"Name":"C#"
-},
-{
-"Id":"2", 
-"Name":"ASP.NET"
-},
-{
-"Id":"3", 
-"Name":"AJAX"
-},
-{
-"Id":"4", 
-"Name":"Bootstrap"
-},
-{
-"Id":"5", 
-"Name":"CSS"
-},
-{
-"Id":"6", 
-"Name":"GIT"
-},
-{
-"Id":"7", 
-"Name":"Google Maps"
-},
-{
-"Id":"8", 
-"Name":"HTML"
-},
-{
-"Id":"9", 
-"Name":"IIS"
-},
-{
-"Id":"10", 
-"Name":"JSON"
-},
-{
-"Id":"11", 
-"Name":"WCF"
-},
-{
-"Id":"12", 
-"Name":"XML"
-}]
+﻿[
+    {
+        "Id": "1",
 
+        "name": "C#"
+    },
+    {
+        "Id": "2",
+
+        "name": ".NET"
+    },
+    {
+        "Id": "3",
+
+        "name": "WCF"
+    },
+    {
+        "Id": "4",
+
+        "name": "Angular JS"
+    },
+    {
+        "Id": "5",
+
+        "name": "SQL Server"
+    },
+    {
+        "Id": "6",
+
+        "name": "JavaScript"
+    },
+    {
+        "Id": "7",
+
+        "name": "ASP .NET"
+    },
+    {
+        "Id": "8",
+
+        "name": "MVC"
+    },
+    {
+        "Id": "9",
+
+        "name": "JQuery"
+    },
+    {
+        "Id": "10",
+
+        "name": "Design Patterns"
+    },
+    {
+        "Id": "11",
+
+        "name": "JavaScript"
+    },
+    {
+        "Id": "12",
+
+        "name": "Git"
+    },
+    {
+        "Id": "13",
+
+        "name": "HTML5"
+    },
+    {
+        "Id": "14",
+
+        "name": "Enity Framework"
+    },
+    {
+        "Id": "15",
+
+        "name": "PHP"
+    },
+    {
+        "Id": "16",
+
+        "name": "Silverlight"
+    },
+    {
+        "Id": "18",
+
+        "name": "Visual Studio"
+    },
+    {
+        "Id": "17",
+
+        "name": "Java"
+    },
+    {
+        "Id": "19",
+
+        "name": "XML"
+    },
+    {
+        "Id": "20",
+
+        "name": "React JS"
+    }
+
+]

@@ -114,6 +114,10 @@ float: left;
 width:16.66%;
 float: left;
 }
+.col-3 {
+width:25%;
+float: left;
+}
 .col-4 {
 width:33.33%;
 float: left;
@@ -207,7 +211,7 @@ display:inline;
        width:175px;
        height:200px;
        float:left;
-       margin-right:150px;
+       margin-right:80px;
        
 }
 .addskill-list {
@@ -224,6 +228,7 @@ display:inline;
     border-bottom: 1px dotted grey;
 }
 #NavItem li:hover {background-color: #969CA9; cursor:pointer;}
+
 /*#NavItem li:active {background-color: #f00;}*/
 
 /* EmployeeSkills.html */
@@ -238,5 +243,18 @@ display:inline;
    text-align:center;padding-top: 75px;
 }
 .emp-skills .sec-button {
-padding: 10px 0;
+    padding: 10px 0;
+}
+.button-add {
+    /*background-image: url('/images/Addbutton.png');*/
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    /*height: 16px;
+    padding-left: 16px;*/
+    vertical-align: middle;
+    /*margin-bottom:250px;*/
+
 }
