@@ -52,7 +52,7 @@
             // nested level 1
             .state('Admin.Dashboard', {
                 url: '/Dashboard',
-                templateUrl: './views/Dashboard.html',
+                templateUrl: './views/DashBoard.html',
                 controller: 'DashboardController',
             })
             .state("Admin.EmployeeList", {
