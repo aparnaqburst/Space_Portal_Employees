@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Employee List</h1>
-    <table ng-table="employeeParams" class="table table-emp" >
+    <table ng-table="employeeParams" class="table table-emp">
         <tr ng-repeat="employee in data">
             <td title="'#'">{{ $index + 1 + previousTotal }}</td>
             <td title="'Name'" filter="{ FullName: 'text'}" sortable="'FullName'">{{ employee.FullName }}
@@ -15,18 +15,28 @@
             <td title="'Email'" filter="{ Email: 'text'}" sortable="'Email'">{{ employee.Email }}
             </td>
             <td title="'Skills'" filter="{ Skills: 'text'}" sortable="'Skills'">
-                <span ng-repeat="s in employee.Skills track by $index">{{s}}, </span>
+                <!-- <span ng-repeat="s in employee.Skills track by $index">{{s}}, </span>-->
+                <div ng-init="limit = 12; moreShown = false; sk = ConcatenateSkills(employee.Skills)">
+    {{sk | limitTo: limit}}{{sk.length > limit ? '...' : ''}}
+    <a ng-show="sk.length > limit"
+      href ng-click="limit=sk.length; moreShown = true">  More
+    </a>
+    <a ng-show="moreShown" href ng-click="limit=12; moreShown =    false"> Less </a>
+</div>
+
             </td>
             <td title="'Designation'" filter="{ Designation: 'text'}" sortable="'Designation'">{{ employee.Designation }}
             </td>
             <td>
-                <!-- <a ui-sref="Admin.EmployeeDetails({ id: employee.EmployeeId })">View</a>-->
-                <a ng-click="ViewProfile(employee.EmployeeId)" href="">View</a>
+                <a href="" ui-sref="^.EmployeeDetails.Profile({ employeeId: employee.EmployeeId })">View</a>
+                <!--  <a ng-click="ViewProfile(employee.EmployeeId)" href="">View</a>-->
             </td>
             <td>
                 <a href="" ng-click="delete(lst.eventid)">Delete</a>
             </td>
         </tr>
     </table>
+    <div class="emp-add"><a href="" ng-click="AddProfile()" class="btn">Add Employee</a></div>
+
 </body>
 </html>

@@ -1,5 +1,3 @@
-﻿employeeApp.controller('DashboardController', function ($scope) {
+﻿employeeApp.controller('DashboardController', function ($scope, $stateParams) {
     console.log('DashboardController');
-    $scope.test = 'dahsboard-parent';
-   
 });

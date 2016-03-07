@@ -5,37 +5,41 @@
 </head>
 <body>
     <div class="emp-profile">
-        <form name="profileForm" ng-submit="updateProfile()" role="form" novalidate>
+        <form name="profileForm" role="form" novalidate>
             <h4>Basic Information</h4>
             <div class="info">
                 <div class="col-6">
                     <div class="control-group">
                         <label>Name</label>
-                        <input type="text" ng-model="fullName" required />
+                        <input type="text" ng-model="fullName" class="form-control" required />
                     </div>
                     <div class="control-group">
                         <label>Emp. Id</label>
-                        <input type="text" ng-model="id" readonly />
+                        <input type="text" ng-model="id" class="form-control" readonly />
                     </div>
                     <div class="control-group">
                         <label>Designation</label>
-                        <!--<select id="designation1" ng-model="designation" required>
-                            <option ng-repeat="option in designationList" value="{{option.value}}">{{option.name}}</option>
-                        </select>-->
-                        <select name="designation1" ng-model="designation"
+                        <select name="designation1" ng-model="designation" class="form-control"
                             ng-options="des.name as des.name for des in designationList"
                             required>
                             <option value="">Select</option>
                         </select>
                     </div>
+                    <!--<div class="control-group">
+                        <label>Gender</label>
+                        <select name="gender" ng-model="gender" class="form-control"
+                            ng-options="gen.name as gen.name for gen in genderList"
+                            required>
+                            <option value="">Select</option>
+                        </select>
+                    </div>-->
+                    
                 </div>
                 <div class="col-6">
+                    
                     <div class="control-group">
                         <label>Department</label>
-                        <!--<select name="department" ng-model="department">
-                            <option ng-repeat="department in departmentList" value="{{department.name}}">{{department.name}}</option>
-                        </select>-->
-                        <select name="department" ng-model="department"
+                        <select name="department" ng-model="department" class="form-control"
                             ng-options="dep.name as dep.name for dep in departmentList"
                             required>
                             <option value="">Select</option>
@@ -46,7 +50,7 @@
                         <!--<select name="stream" ng-model="stream">
                             <option ng-repeat="stream in streamList" value="{{stream.name}}">{{stream.name}}</option>
                         </select>-->
-                        <select name="stream" ng-model="stream"
+                        <select name="stream" ng-model="stream" class="form-control"
                             ng-options="str.name as str.name for str in streamList"
                             required>
                             <option value="">Select</option>
@@ -54,12 +58,14 @@
                     </div>
                     <div class="control-group">
                         <label>Experience</label>
-                        <select name="years" ng-model="experienceInYears" ng-options="option for option in ExperienceYears">
+                        <div>
+                        <select name="years" ng-model="experienceInYears" ng-options="option for option in ExperienceYears" class="form-control exp">
                         </select>
                         years
-                        <select name="months" ng-model="experienceInMonths" ng-options="option for option in ExperienceMonths">
+                        <select name="months" ng-model="experienceInMonths" ng-options="option for option in ExperienceMonths" class="form-control exp">
                         </select>
                         months
+                            </div>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -69,30 +75,35 @@
             <div class="info">
                 <div class="col-6">
                     <div class="control-group">
-                        <label>Mobile</label>
-                        <input type="text" ng-model="mobile" required />
+                        <label>Email</label>
+                        <input type="email" ng-model="email" class="form-control" required />
                     </div>
                     <div class="control-group">
                         <label>Address</label>
-                        <textarea rows="4" cols="25" ng-model="address">
+                        <textarea rows="4" cols="25" ng-model="address" class="form-control">
                         </textarea>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="control-group">
+                        <label>Mobile</label>
+                        <input type="text" ng-model="mobile" class="form-control" required />
+                    </div>
+                    <div class="control-group">
                         <label>Residence</label>
-                        <input type="text" ng-model="residence" />
+                        <input type="text" ng-model="residence" class="form-control" />
                     </div>
                     <div class="control-group">
                         <label>Skype Id</label>
-                        <input type="text" ng-model="skypeId" />
+                        <input type="text" ng-model="skypeId" class="form-control" />
                     </div>
                 </div>
                 <div class="clear"></div>
             </div>
             <div class="control-group">
-                <input id="cancel" type="button" value="Cancel" ui-sref="^.Profile" />
-                <input id="save" type="submit" value="Save" ng-disabled="profileForm.$invalid" />
+                <input id="cancel" type="button" value="Cancel" ui-sref="^.Profile" class="btn" />
+                <input id="save" type="submit" value="Save" ng-hide="isEditMode" ng-click="addProfile()" ng-disabled="profileForm.$invalid" class="btn" />
+                <input id="update" type="submit" value="Update" ng-show="isEditMode" ng-click="updateProfile()" ng-disabled="profileForm.$invalid" class="btn" />
             </div>
         </form>
     </div>
