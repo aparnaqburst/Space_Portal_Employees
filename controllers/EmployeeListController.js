@@ -1,34 +1,21 @@
 ﻿
-employeeApp.controller('EmployeeListController', function ($scope, $state, $http, $filter, ngTableParams, EmployeeDetailsService) {
+employeeApp.controller('EmployeeListController', function ($scope, $state, $http, $q, $filter, ngTableParams, EmployeeDetailsService) {
     console.log('EmployeeListController');
 
-    //$scope.employeeList = [];
-    //$scope.getEmployees = function () {
-    //    EmployeeDetailsService.getEmployeeList().then(
-    //            function (response) {
-    //                $scope.employeeList = response;
-    //            },
-    //             function (errResponse) {
-    //                 console.error('Error');
-    //             }
-    //      );
-    //}
-    //$scope.getEmployees();
-
-    var employeeList2 = []
+    var employeeList = null;
     $scope.employeeParams = new ngTableParams({
         page: 1,
         count: 4
     }, {
         counts: [],
         getData: function ($defer, params) {
-            EmployeeDetailsService.getEmployeeList().then(
+            EmployeeDetailsService.getEmployeeListFromLocalStoage().then(
                 function (response) {
-                    employeeList2 = response;
-                    $scope.data = params.sorting() ? $filter('orderBy')(employeeList2, params.orderBy()) : employeeList2;
+                    employeeList = response;
+                    $scope.data = params.sorting() ? $filter('orderBy')(employeeList, params.orderBy()) : employeeList;
                     $scope.data = params.filter() ? $filter('filter')($scope.data, params.filter()) : $scope.data;
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
-                    params.total(employeeList2.length);
+                    params.total(employeeList.length);
 
                     $scope.previousTotal = (params.page() - 1) * params.count();
 
@@ -40,8 +27,17 @@ employeeApp.controller('EmployeeListController', function ($scope, $state, $http
         }
     });
 
-    $scope.ViewProfile = function (employeeId) {
-        localStorage.setItem("EmployeeId", employeeId);
-        $state.go('^.EmployeeDetails.Profile');
+    $scope.AddProfile = function () {
+        $state.go('^.EmployeeDetails.EditProfile');
     };
+
+    $scope.ConcatenateSkills = function (skills) {
+        var skillsString = '';
+        angular.forEach(skills, function (value, index) {
+            skillsString += value + ', ';
+        });
+
+        return skillsString;
+    };
+
 });

@@ -8,11 +8,12 @@
             controller: 'LoginController',
         })
         .state("Employee", {
-            url: '/Employee',
+            url: '/Employee?employeeId',
             templateUrl: './views/EmployeeMaster.html',
-            //controller: 'LoginController',
+            abstract: true,
+           // controller: 'EmployeeMasterController',
         })
-            // nested
+            // nested level 1
             .state('Employee.Dashboard', {
                 url: '/Dashboard',
                 templateUrl: './views/Dashboard.html',
@@ -62,7 +63,7 @@
             })
             .state("Admin.EmployeeDetails", {
                 
-                url: '/EmployeeDetails?id',
+                url: '/EmployeeDetails?employeeId',
                 templateUrl: './views/EmployeeDetails.html',
                 controller: 'EmployeeDetailsController',
             })
@@ -89,19 +90,3 @@
                 });
 });
 
-//employeeApp.config(['$routeProvider', function ($routeProvider) {
-//    $routeProvider
-//	.when('/login', {
-//	    templateUrl: './views/login.html',
-//	    //controller: 'DashController'
-//	})
-//	.when('/dashboard', {
-//	    templateUrl: './views/dashboard.html',
-//	   // controller: 'UserController'
-//	})
-//    .when('/bookmeetingroom', {
-//        templateUrl: './views/bookmeetingroom.html',
-//        controller: 'BookMeetingRoomController'
-//    })
-	
-//}]);

@@ -8,7 +8,6 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     { name: 'Associate Architect', value: '3' },
     { name: 'Architect', value: '4' },
     ];
-    // $scope.designation = $scope.designationList[0].value; // default
 
     $scope.departmentList = [
             { name: 'Production', value: '1' },
@@ -16,14 +15,17 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
             { name: 'Accounting and Finance.', value: '3' },
             { name: 'Purchasing', value: '4' },
     ];
-    //$scope.department = $scope.departmentList[0].value; // default
 
     $scope.streamList = [
             { name: '.Net', value: '1' },
             { name: 'Php', value: '2' },
             { name: 'Java', value: '3' },
     ];
-    //$scope.stream = $scope.streamList[0].value; // default
+
+    $scope.genderList = [
+            { name: 'Male', value: '1' },
+            { name: 'Female', value: '2' },
+    ];
 
     $scope.ExperienceYears = [];
     $scope.GetExperienceYears = function() {
@@ -42,17 +44,19 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
     $scope.GetExperienceMonths();
 
     $scope.employeeList = [];
-    var selectedEmployeeId = localStorage.getItem("EmployeeId")//$rootScope.LoginId; //$stateParams.id; //$location.search()['id'];
-
+    var selectedEmployeeId = $stateParams.employeeId;
     $scope.employeeSkills = [];
+
     $scope.getEmployee = function () {
-        return EmployeeDetailsService.getEmployeeList().then(
+        return EmployeeDetailsService.getEmployeeListFromLocalStoage().then(
                     function (response) {
                         $scope.employeeList = response;
                         angular.forEach($scope.employeeList, function (employee) {
                             if (employee.EmployeeId == selectedEmployeeId) {
                                 $scope.fullName = employee.FullName;
                                 $scope.id = employee.EmployeeId;
+                                $scope.email = employee.Email;
+                                $scope.gender = employee.Gender;
                                 $scope.designation = employee.Designation;
                                 $scope.department = employee.Department;
                                 $scope.stream = employee.Stream;
@@ -72,16 +76,6 @@ employeeApp.controller('EmployeeDetailsController', function ($scope, $http, $st
               )
     };
     $scope.getEmployee();
-
-
-    ////// Edit Profile
-    ////$scope.editProfile = function () {
-    ////    $state.go('.EditProfile');
-    ////}
-    //if ($state.is('Admin.EmployeeDetails') || $state.is('Employee.EmployeeDetails')) {
-    //    $state.go('Employee.EmployeeDetails.Profile');
-    //}
-  // $state.go('.Profile');
 });
 
     
